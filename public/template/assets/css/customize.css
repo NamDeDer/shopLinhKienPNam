@@ -1,0 +1,9 @@
+.product-info .title {
+    display: -webkit-box;       /* Tạo box để giới hạn dòng */
+    -webkit-line-clamp: 2;     /* Giới hạn số dòng (2 dòng) */
+    -webkit-box-orient: vertical; /* Định hướng box theo chiều dọc */
+    overflow: hidden;          /* Ẩn nội dung vượt quá */
+    text-overflow: ellipsis;   /* Hiển thị dấu "..." nếu bị cắt */
+    height: calc(0.8em * 2);   /* Đặt chiều cao dựa trên 2 dòng (line-height 1.5em) */
+    line-height: 0.8em;        /* Đặt khoảng cách giữa các dòng */
+}
