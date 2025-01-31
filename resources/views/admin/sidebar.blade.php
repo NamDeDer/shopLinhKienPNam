@@ -46,7 +46,7 @@
             <li class="">
                 <a href="#"><i class="fa fa-shopping-cart"></i> <span class="nav-label">Đơn hàng</span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
-                    <li class="active"><a href="/admin/product/list">Danh sách sản phẩm</a></li>
+                    <li class="active"><a href="/admin/customers">Danh sách đơn hàng</a></li>
                 </ul>
             </li>
         </ul>

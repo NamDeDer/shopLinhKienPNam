@@ -3,7 +3,7 @@
 @section('content')
 <ol class="breadcrumb">
     <li>
-        <a href="{{route('admin')}}">Dashboard</a>
+        <a href="{{route('admin')}}">Trang chủ</a>
     </li>
     <li class="active">
         <strong>{{$title}}</strong>

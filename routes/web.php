@@ -53,6 +53,10 @@ Route::middleware(['auth'])->group(function(){
 
         #upload
         Route::post('upload/services', [\App\Http\Controllers\Admin\UploadController::class, 'store']);
+
+        #cart
+        Route::get('customers', [\App\Http\Controllers\Admin\CartController::class, 'index']);
+        Route::get('customers/view/{customer}', [\App\Http\Controllers\Admin\CartController::class, 'show']);
     });
     
 

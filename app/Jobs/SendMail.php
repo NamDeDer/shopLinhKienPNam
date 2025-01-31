@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Mail\OrderShipped;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
