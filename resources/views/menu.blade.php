@@ -36,7 +36,7 @@
             </div>
 
 
-            <div class="single-widget">
+            {{-- <div class="single-widget">
               <h3>All Categories</h3>
               <ul class="list">
                 <li>
@@ -61,22 +61,21 @@
                   <a href="product-grids.html">Printers & Ink</a><span>(512)</span>
                 </li>
               </ul>
-            </div>
+            </div> --}}
 
 
             <div class="single-widget range">
-              <h3>Price Range</h3>
+              <h3>Phạm vi giá</h3>
               <input type="range" class="form-range" name="range" step="1" min="100" max="10000" value="10"
                 onchange="rangePrimary.value=value">
               <div class="range-inner">
-                <label>$</label>
                 <input type="text" id="rangePrimary" placeholder="100" />
               </div>
             </div>
 
 
             <div class="single-widget condition">
-              <h3>Filter by Price</h3>
+              <h3>Lọc theo giá</h3>
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
                 <label class="form-check-label" for="flexCheckDefault1">
@@ -105,7 +104,7 @@
 
 
             <div class="single-widget condition">
-              <h3>Filter by Brand</h3>
+              <h3>Lọc theo hãng</h3>
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault11">
                 <label class="form-check-label" for="flexCheckDefault11">
@@ -165,16 +164,15 @@
               <div class="row align-items-center">
                 <div class="col-lg-7 col-md-8 col-12">
                   <div class="product-sorting">
-                    <label for="sorting">Sort by:</label>
+                    <label for="sorting">Sắp xếp:</label>
                     <select class="form-control" id="sorting">
-                      <option>Popularity</option>
-                      <option>Low - High Price</option>
-                      <option>High - Low Price</option>
-                      <option>Average Rating</option>
-                      <option>A - Z Order</option>
-                      <option>Z - A Order</option>
+                      <option>Phổ biến</option>
+                      <option>Giá</option>
+                      <option>Đánh giá cao</option>
+                      <option>A - Z</option>
+                      <option>Z - A</option>
                     </select>
-                    <h3 class="total-show-product">Showing: <span>1 - 12 items</span></h3>
+                    <h3 class="total-show-product">Đang hiển thị: <span>1 - 12 sản phẩm</span></h3>
                   </div>
                 </div>
                 <div class="col-lg-5 col-md-4 col-12">
@@ -193,28 +191,58 @@
             </div>
             <div class="tab-content" id="nav-tabContent">
               <div class="tab-pane fade show active" id="nav-grid" role="tabpanel" aria-labelledby="nav-grid-tab">
-                @include('products.list')
+                  <div class="row">
+                    @foreach ($products as $key=> $product)
+                        <div class="col-lg-3 col-md-4 col-6">                    
+                            <div class="single-product">
+                                <div class="product-image">
+                                    <img src="{{$product->thumb}}" alt="{{$product->name}}" class="img-fluid">
+                                    <div class="button">
+                                        <a href="/san-pham/{{ $product->id }}-{{ Str::slug($product->name, '-') }}.html" class="btn"><i class="lni lni-cart"></i>Mua ngay</a>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    {{-- <span class="category">{{ $product->menu->name ?? 'Không có danh mục' }}</span> --}}
+                                    <h4 class="title">
+                                        <a href="/san-pham/{{$product->id}}-{{\Str::slug($product->name,'-')}}.html">{{$product->name}}</a>
+                                    </h4>
+                                    <ul class="review">
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star"></i></li>
+                                        <span>4.0 Đánh giá</span>
+                                    </ul>
+                                    <div class="price">
+                                        <span class="sale-price">{{$product->formatted_price_sale}}<u>đ</u></span>
+                                        <span class="discount-price">{{$product->formatted_price}}<u>đ</u></span>
+                                    </div>
+                                </div>
+                            </div>      
+                        </div>
+                    @endforeach
+                </div>
               </div>
               <div class="tab-pane fade" id="nav-list" role="tabpanel" aria-labelledby="nav-list-tab">
                 <div class="row">
+                  @foreach ($products as $key=> $product)
                   <div class="col-lg-12 col-md-12 col-12">
-
                     <div class="single-product">
                       <div class="row align-items-center">
                         <div class="col-lg-4 col-md-4 col-12">
                           <div class="product-image">
-                            <img src="assets/images/products/product-1.jpg" alt="#">
+                            <img src="{{$product->thumb}}" alt="{{$product->name}}" class="img-fluid">
                             <div class="button">
-                              <a href="product-details.html" class="btn"><i class="lni lni-cart"></i> Add to
-                                Cart</a>
+                              <a href="/san-pham/{{ $product->id }}-{{ Str::slug($product->name, '-') }}.html" class="btn"><i class="lni lni-cart"></i> Mua ngay</a>
                             </div>
                           </div>
                         </div>
                         <div class="col-lg-8 col-md-8 col-12">
                           <div class="product-info">
-                            <span class="category">Watches</span>
+                            {{-- <span class="category">Watches</span> --}}
                             <h4 class="title">
-                              <a href="product-grids.html">Xiaomi Mi Band 5</a>
+                              <a href="/san-pham/{{$product->id}}-{{\Str::slug($product->name,'-')}}.html">{{$product->name}}</a>
                             </h4>
                             <ul class="review">
                               <li><i class="lni lni-star-filled"></i></li>
@@ -222,166 +250,19 @@
                               <li><i class="lni lni-star-filled"></i></li>
                               <li><i class="lni lni-star-filled"></i></li>
                               <li><i class="lni lni-star"></i></li>
-                              <li><span>4.0 Review(s)</span></li>
+                              <li><span>4.0 Đánh giá</span></li>
                             </ul>
                             <div class="price">
-                              <span>$199.00</span>
-                            </div>
+                              <span class="sale-price">{{$product->formatted_price_sale}}<u>đ</u></span>
+                              <span class="discount-price">{{$product->formatted_price}}<u>đ</u></span>
+                          </div>
                           </div>
                         </div>
                       </div>
                     </div>
 
                   </div>
-                  <div class="col-lg-12 col-md-12 col-12">
-
-                    <div class="single-product">
-                      <div class="row align-items-center">
-                        <div class="col-lg-4 col-md-4 col-12">
-                          <div class="product-image">
-                            <img src="assets/images/products/product-2.jpg" alt="#">
-                            <span class="sale-tag">-25%</span>
-                            <div class="button">
-                              <a href="product-details.html" class="btn"><i class="lni lni-cart"></i> Add to
-                                Cart</a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-12">
-                          <div class="product-info">
-                            <span class="category">Speaker</span>
-                            <h4 class="title">
-                              <a href="product-grids.html">Big Power Sound Speaker</a>
-                            </h4>
-                            <ul class="review">
-                              <li><i class="lni lni-star-filled"></i></li>
-                              <li><i class="lni lni-star-filled"></i></li>
-                              <li><i class="lni lni-star-filled"></i></li>
-                              <li><i class="lni lni-star-filled"></i></li>
-                              <li><i class="lni lni-star-filled"></i></li>
-                              <li><span>5.0 Review(s)</span></li>
-                            </ul>
-                            <div class="price">
-                              <span>$275.00</span>
-                              <span class="discount-price">$300.00</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                  <div class="col-lg-12 col-md-12 col-12">
-
-                    <div class="single-product">
-                      <div class="row align-items-center">
-                        <div class="col-lg-4 col-md-4 col-12">
-                          <div class="product-image">
-                            <img src="assets/images/products/product-3.jpg" alt="#">
-                            <div class="button">
-                              <a href="product-details.html" class="btn"><i class="lni lni-cart"></i> Add to
-                                Cart</a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-12">
-                          <div class="product-info">
-                            <span class="category">Camera</span>
-                            <h4 class="title">
-                              <a href="product-grids.html">WiFi Security Camera</a>
-                            </h4>
-                            <ul class="review">
-                              <li><i class="lni lni-star-filled"></i></li>
-                              <li><i class="lni lni-star-filled"></i></li>
-                              <li><i class="lni lni-star-filled"></i></li>
-                              <li><i class="lni lni-star-filled"></i></li>
-                              <li><i class="lni lni-star-filled"></i></li>
-                              <li><span>5.0 Review(s)</span></li>
-                            </ul>
-                            <div class="price">
-                              <span>$399.00</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                  <div class="col-lg-12 col-md-12 col-12">
-
-                    <div class="single-product">
-                      <div class="row align-items-center">
-                        <div class="col-lg-4 col-md-4 col-12">
-                          <div class="product-image">
-                            <img src="assets/images/products/product-4.jpg" alt="#">
-                            <span class="new-tag">New</span>
-                            <div class="button">
-                              <a href="product-details.html" class="btn"><i class="lni lni-cart"></i> Add to
-                                Cart</a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-12">
-                          <div class="product-info">
-                            <span class="category">Phones</span>
-                            <h4 class="title">
-                              <a href="product-grids.html">iphone 6x plus</a>
-                            </h4>
-                            <ul class="review">
-                              <li><i class="lni lni-star-filled"></i></li>
-                              <li><i class="lni lni-star-filled"></i></li>
-                              <li><i class="lni lni-star-filled"></i></li>
-                              <li><i class="lni lni-star-filled"></i></li>
-                              <li><i class="lni lni-star-filled"></i></li>
-                              <li><span>5.0 Review(s)</span></li>
-                            </ul>
-                            <div class="price">
-                              <span>$400.00</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                  <div class="col-lg-12 col-md-12 col-12">
-
-                    <div class="single-product">
-                      <div class="row align-items-center">
-                        <div class="col-lg-4 col-md-4 col-12">
-                          <div class="product-image">
-                            <img src="assets/images/products/product-7.jpg" alt="#">
-                            <span class="sale-tag">-50%</span>
-                            <div class="button">
-                              <a href="product-details.html" class="btn"><i class="lni lni-cart"></i> Add to
-                                Cart</a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-12">
-                          <div class="product-info">
-                            <span class="category">Headphones</span>
-                            <h4 class="title">
-                              <a href="product-grids.html">PX7 Wireless Headphones</a>
-                            </h4>
-                            <ul class="review">
-                              <li><i class="lni lni-star-filled"></i></li>
-                              <li><i class="lni lni-star-filled"></i></li>
-                              <li><i class="lni lni-star-filled"></i></li>
-                              <li><i class="lni lni-star-filled"></i></li>
-                              <li><i class="lni lni-star"></i></li>
-                              <li><span>4.0 Review(s)</span></li>
-                            </ul>
-                            <div class="price">
-                              <span>$100.00</span>
-                              <span class="discount-price">$200.00</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
+                  @endforeach
                 </div>
                 <div class="row">
                   <div class="col-12">

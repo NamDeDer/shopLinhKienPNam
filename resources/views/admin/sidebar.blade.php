@@ -22,31 +22,31 @@
             <li class="">
                 <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Danh mục</span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
-                    <li><a href="/admin/menus/add">Thêm danh mục</a></li>
-                    <li class="active"><a href="/admin/menus/list">Danh sách danh mục</a></li>
+                    <li class="{{Request::is('admin/menus/add')?'active':''}}"><a href="/admin/menus/add">Thêm danh mục</a></li>
+                    <li class="{{Request::is('admin/menus/list')?'active':''}}"><a href="/admin/menus/list">Danh sách danh mục</a></li>
                 </ul>
             </li>
 
             <li class="">
                 <a href="#"><i class="fa fa-laptop"></i> <span class="nav-label">Sản phẩm</span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
-                    <li><a href="/admin/product/add">Thêm sản phẩm</a></li>
-                    <li class="active"><a href="/admin/product/list">Danh sách sản phẩm</a></li>
+                    <li class="{{Request::is('admin/product/add')?'active':''}}"><a href="/admin/product/add">Thêm sản phẩm</a></li>
+                    <li class="{{Request::is('admin/product/list')?'active':''}}"><a href="/admin/product/list">Danh sách sản phẩm</a></li>
                 </ul>
             </li>
 
             <li class="">
                 <a href="#"><i class="fa fa-picture-o"></i> <span class="nav-label">Slider</span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
-                    <li><a href="/admin/slider/add">Thêm slider</a></li>
-                    <li class="active"><a href="/admin/slider/list">Danh sách slider</a></li>
+                    <li class="{{Request::is('admin/slider/add')?'active':''}}"><a href="/admin/slider/add">Thêm slider</a></li>
+                    <li class="{{Request::is('admin/slider/list')?'active':''}}"><a href="/admin/slider/list">Danh sách slider</a></li>
                 </ul>
             </li>
 
             <li class="">
                 <a href="#"><i class="fa fa-shopping-cart"></i> <span class="nav-label">Đơn hàng</span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
-                    <li class="active"><a href="/admin/customers">Danh sách đơn hàng</a></li>
+                    <li class="{{Request::is('admin/customers')?'active':''}}"><a href="/admin/customers">Danh sách đơn hàng</a></li>
                 </ul>
             </li>
         </ul>

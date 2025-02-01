@@ -23,8 +23,6 @@ class CartController extends Controller
     }
 
     public function show(Customer $customer){
-
-        dd($customer->carts()->get());
         return view('admin.carts.detail',[
             'title'=>'Chi tiết đơn hàng:' . $customer->name,
             'customer'=>$customer,

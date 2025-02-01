@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="csrf-token" content="{{csrf_token()}}">
-<link rel="shortcut icon" type="image/x-icon" href="/template/assets/images/favicon.svg" />
+<link rel="shortcut icon" type="image/x-icon" href="/template/assets/images/logo/CAMISHOP.png" />
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/template/assets/css/customize.css" />
 <link rel="stylesheet" href="/template/assets/css/bootstrap.min.css" />

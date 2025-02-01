@@ -3,7 +3,7 @@
 <img src="/template/assets/images/thegioididong/background/bg-right.png" width="360" height="400" class="label-right">
 <img src="/template/assets/images/thegioididong/background/bg-left.png" width="360" height="400" class="label-left">
 
-
+<div id="sakura-container"></div>
 
 {{-- <div class="preloader">
     <div class="preloader-inner">
@@ -25,9 +25,11 @@
     @endphp
 
     <div class="topbar">
-        <a href="">
-            <img src="/template/assets/images/hero/topbar_header.png" alt="">
-        </a>
+        <div class="topbar-container">
+            <a href="">
+                <img src="/template/assets/images/hero/topbar_header.png" alt="">
+            </a>
+        </div>
     </div>
 
 
@@ -37,7 +39,7 @@
                 <div class="col-lg-3 col-md-3 col-7">
 
                     <a class="navbar-brand" href="/">
-                        <img src="/template/assets/images/logo/logo.svg" alt="Logo">
+                        <img src="/template/assets/images/logo/logo.png" alt="Logo">
                     </a>
 
                 </div>

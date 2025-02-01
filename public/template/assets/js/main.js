@@ -49,3 +49,23 @@ function checkQuantity(input) {
     if (value > 100) input.value = 100;
     if (isNaN(value)) input.value = 1;
 }
+
+function createSakura() {
+    const sakura = document.createElement("div");
+    sakura.classList.add("sakura");
+
+    // Vị trí ngẫu nhiên
+    sakura.style.left = Math.random() * 100 + "vw";
+    sakura.style.animationDuration = Math.random() * 3 + 3 + "s"; // 3-6 giây
+    sakura.style.width = sakura.style.height = Math.random() * 15 + 15 + "px"; // 15-30px
+
+    document.getElementById("sakura-container").appendChild(sakura);
+
+    // Xóa phần tử sau khi rơi xong
+    setTimeout(() => {
+        sakura.remove();
+    }, 6000);
+}
+
+// Tạo hoa liên tục
+setInterval(createSakura, 300);

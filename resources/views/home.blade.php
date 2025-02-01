@@ -9,10 +9,10 @@
     
                         <div class="hero-slider">
                             @foreach ($sliders as $slider)
-                                
+                            {{-- 800x500 --}}
                             <div class="single-slider"
                                 style="background-image: url({{ $slider->thumb }});">
-                                <div class="content">
+                                {{-- <div class="content">
                                     <h1
                                     style="font-family: 'Dancing Script', cursive;color:aqua"
                                     >
@@ -21,7 +21,7 @@
                                     <div class="button">
                                         <a href="{{$slider->url}}" class="btn">Xem ngay</a>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                     
                             @endforeach
@@ -31,29 +31,27 @@
                 <div class="col-lg-4 col-12">
                     <div class="row">
                         <div class="col-lg-12 col-md-6 col-12 md-custom-padding">
-    
+                            {{-- 740x500 --}}
                             <div class="hero-small-banner"
-                                style="background-image: url('/template/assets/images/hero/slider-bnr.jpg');">
-                                <div class="content">
+                                style="background-image: url('/template/assets/images/thegioididong/banner/bn1.1.png');">
+                                {{-- <div class="content">
                                     <h2>
                                         <span>New line required</span>
                                         iPhone 12 Pro Max
                                     </h2>
                                     <h3>$259.99</h3>
-                                </div>
+                                </div> --}}
                             </div>
     
                         </div>
                         <div class="col-lg-12 col-md-6 col-12">
     
-                            <div class="hero-small-banner style2">
-                                <div class="content">
-                                    <h2>Weekly Sale!</h2>
-                                    <p>Saving up to 50% off all online store items this week.</p>
+                            <div class="hero-small-banner style2" style="background-image: url('/template/assets/images/thegioididong/banner/bn1.2.png');">
+                                {{-- <div class="content">
                                     <div class="button">
                                         <a class="btn" href="product-grids.html">Shop Now</a>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
     
                         </div>

@@ -17,6 +17,13 @@
     $(document).ready(function() {
         $('#side-menu').metisMenu();
     });
+
+    $(document).ready(function () {
+    $('.navbar-minimalize').click(function (e) {
+        e.preventDefault();
+        $("body").toggleClass("mini-navbar");
+    });
+});
 </script>
 
 <!-- Dynamic scripts if any -->

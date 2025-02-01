@@ -1,14 +1,6 @@
 @extends('admin.main')
 
 @section('content')
-<ol class="breadcrumb">
-    <li>
-        <a href="{{route('admin')}}">Dashboard</a>
-    </li>
-    <li class="active">
-        <strong>{{$title}}</strong>
-    </li>
-</ol>
 <div class="wrapper wrapper-content  animated fadeInRight">
     <div class="row">
         <div class="col-lg-12">
